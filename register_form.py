@@ -19,11 +19,11 @@ frame_food.place(x=25, y=30)
 # frame_drinks = Frame(frame_options, width=350, height=200, bg="#eba2a2")
 # frame_drinks.place(x=25, y=380)
 label_food = Label(frame_food, 
-              text="Comida",
+              text="Correo:",
               font=("Calibri", "22", "bold"),
               fg="white",
               bg="#d48df0")
-label_food.place(x=20, y=290)
+label_food.place(x=20, y=230)
 
 # Widgets dentro del contender NAVBAR
 title = Label(frame_navbar, 

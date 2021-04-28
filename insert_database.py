@@ -7,7 +7,7 @@ connection = mysql.connector.connect(host="localhost",
 
 cursor = connection.cursor()
 query = "INSERT INTO tbl_usuarios(CORREO, PWD, EDAD) VALUES (%s,%s,%s)"
-data = ("admin@gmail.com", "admin", 23)
+data = ("reader@gmail.com", "supervisor", 20)
 cursor.execute(query, data)
 
 connection.commit()
