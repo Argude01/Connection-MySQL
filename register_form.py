@@ -1,9 +1,12 @@
 from tkinter import *
 from tkinter import ttk
+import red_social_connection
 
 window = Tk()
 frame_app = Frame(window, width=400, height=600, bg="red")
 frame_app.pack()
+
+#def register():
 
 # Widgets dentro del contender APP
 frame_navbar = Frame(frame_app, width=400, height=100)
@@ -14,16 +17,37 @@ frame_options = Frame(frame_app, width=400, height=500)
 frame_options.grid(row=2, column=0)
 
 # Widgets dentro del contender OPTIONS
-frame_food = Frame(frame_options, width=350, height=350, bg="#d48df0")
+frame_food = Frame(frame_options, width=350, height=450, bg="#d48df0")
 frame_food.place(x=25, y=30)
 # frame_drinks = Frame(frame_options, width=350, height=200, bg="#eba2a2")
 # frame_drinks.place(x=25, y=380)
-label_food = Label(frame_food, 
+label_email = Label(frame_food, 
               text="Correo:",
               font=("Calibri", "22", "bold"),
               fg="white",
               bg="#d48df0")
-label_food.place(x=20, y=230)
+label_email.place(x=20, y=60)
+entry_email = Entry(frame_food, justify=LEFT, width=30, font=("Calibri", "14", "bold"))
+entry_email.place(x=20, y=100)
+label_pwd = Label(frame_food, 
+              text="Contraseña:",
+              font=("Calibri", "22", "bold"),
+              fg="white",
+              bg="#d48df0")
+label_pwd.place(x=20, y=130)
+entry_pwd = Entry(frame_food, justify=LEFT, width=30, font=("Calibri", "14", "bold"), show="*")
+entry_pwd.place(x=20, y=170)
+label_age = Label(frame_food, 
+              text="Edad:",
+              font=("Calibri", "22", "bold"),
+              fg="white",
+              bg="#d48df0")
+label_age.place(x=20, y=200)
+entry_age = Entry(frame_food, justify=LEFT, width=30, font=("Calibri", "14", "bold"))
+entry_age.place(x=20, y=240)
+
+button_register = Button(frame_food, text="Registrarme", font=("Calibri", "14", "bold"))
+button_register.place(x=20, y=300)
 
 # Widgets dentro del contender NAVBAR
 title = Label(frame_navbar, 
