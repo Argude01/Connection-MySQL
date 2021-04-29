@@ -1,12 +1,22 @@
 from tkinter import *
 from tkinter import ttk
-import red_social_connection
+import mydatabase
 
 window = Tk()
 frame_app = Frame(window, width=400, height=600, bg="red")
 frame_app.pack()
 
-#def register():
+email = StringVar()
+pwd = StringVar()
+age = StringVar()
+
+def register():
+    email = entry_email.get()
+    pwd = entry_pwd.get()
+    age = entry_age.get()
+    
+    redsocial_db = mydatabase.MyDatabase()
+    redsocial_db.insert_db(email, pwd, age)
 
 # Widgets dentro del contender APP
 frame_navbar = Frame(frame_app, width=400, height=100)
@@ -19,8 +29,6 @@ frame_options.grid(row=2, column=0)
 # Widgets dentro del contender OPTIONS
 frame_food = Frame(frame_options, width=350, height=450, bg="#d48df0")
 frame_food.place(x=25, y=30)
-# frame_drinks = Frame(frame_options, width=350, height=200, bg="#eba2a2")
-# frame_drinks.place(x=25, y=380)
 label_email = Label(frame_food, 
               text="Correo:",
               font=("Calibri", "22", "bold"),
@@ -46,7 +54,8 @@ label_age.place(x=20, y=200)
 entry_age = Entry(frame_food, justify=LEFT, width=30, font=("Calibri", "14", "bold"))
 entry_age.place(x=20, y=240)
 
-button_register = Button(frame_food, text="Registrarme", font=("Calibri", "14", "bold"))
+button_register = Button(frame_food, text="Registrarme", 
+font=("Calibri", "14", "bold"), command=show_data)
 button_register.place(x=20, y=300)
 
 # Widgets dentro del contender NAVBAR
