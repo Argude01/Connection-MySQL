@@ -6,16 +6,21 @@ window = Tk()
 frame_app = Frame(window, width=400, height=600, bg="red")
 frame_app.pack()
 
+# Inicializando las variables para almacenar lo que escriba el usuario en las cajas de Texto (Entry)
 email = StringVar()
 pwd = StringVar()
 age = StringVar()
 
+# Creando función "register()", función que se ejecuta la dar clic en el botón "Registrarme"
 def register():
+    # Obteniendo los valores de los widgets Entry mediante la función "GET()" 
+    # y almacenandolos en las variables previamente inicializadas
     email = entry_email.get()
     pwd = entry_pwd.get()
     age = entry_age.get()
-    
+    # creando un objeto de la Base de datos "MyDatabase", para acceder a la función "insert_db"
     redsocial_db = mydatabase.MyDatabase()
+    # ejecutando la función "insert_db" y enviando las variables como parámetros
     redsocial_db.insert_db(email, pwd, age)
 
 # Widgets dentro del contender APP
@@ -55,7 +60,8 @@ entry_age = Entry(frame_food, justify=LEFT, width=30, font=("Calibri", "14", "bo
 entry_age.place(x=20, y=240)
 
 button_register = Button(frame_food, text="Registrarme", 
-font=("Calibri", "14", "bold"), command=show_data)
+                        font=("Calibri", "14", "bold"), 
+                        command=register)
 button_register.place(x=20, y=300)
 
 # Widgets dentro del contender NAVBAR
